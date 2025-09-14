@@ -1,12 +1,7 @@
 const menuItems = [
-    { id: 1, name: "닭꼬치", price: 4000 },
-    { id: 2, name: "떡볶이", price: 5000 },
-    { id: 3, name: "어묵탕", price: 6000 },
-    { id: 4, name: "순대", price: 5000 },
-    { id: 5, name: "막걸리", price: 8000 },
-    { id: 6, name: "소주", price: 5000 },
-    { id: 7, name: "맥주", price: 5000 },
-    { id: 8, name: "음료수", price: 2000 }
+    { id: 1, name: "제육볶음", price: 4000 },
+    { id: 2, name: "닭발", price: 5000 },
+    { id: 3, name: "어묵탕", price: 6000 }
 ];
 
 const tablesCount = 20;
@@ -289,5 +284,6 @@ function toggleSummaryPanel() {
         summaryButton.textContent = '총 수입 및 판매 현황 보기';
     }
 }
+
 
 init();
