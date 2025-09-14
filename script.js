@@ -285,4 +285,15 @@ function toggleSummaryPanel() {
     }
 }
 
+// 더블 탭 확대 방지
+let lastTouchTime = 0;
+document.addEventListener('touchend', event => {
+  const currentTime = new Date().getTime();
+  const tapLength = currentTime - lastTouchTime;
+  if (tapLength < 500 && tapLength > 0) {
+    event.preventDefault();
+  }
+  lastTouchTime = currentTime;
+});
+
 init();
