@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>축제 주점 포스기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-panel">
+            <h2>테이블 관리</h2>
+            <div class="tables-grid" id="tables-grid">
+                </div>
+        </div>
+
+        <div class="right-panel">
+            <div id="no-table-selected" class="no-table-selected">
+                테이블을 선택해 주세요.
+            </div>
+
+            <div id="order-detail-panel" class="order-detail-panel" style="display: none;">
+                <div class="panel-header">
+                    <h2 id="current-table-number"></h2>
+                    <button class="home-button" onclick="goHome()">홈</button>
+                </div>
+                
+                <div class="menu-selection">
+                    <h3>메뉴 선택</h3>
+                    <div class="menu-grid" id="menu-grid">
+                        </div>
+                </div>
+
+                <div class="order-list-container">
+                    <div class="order-column">
+                        <h3>이전 주문</h3>
+                        <ul id="previous-orders"></ul>
+                    </div>
+                    <div class="order-column">
+                        <h3>새로운 주문</h3>
+                        <ul id="current-orders"></ul>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <p>총 주문 금액: <span id="current-table-total">0</span>원</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="order-button" onclick="placeOrder()">주문</button>
+                    <button class="pay-button" onclick="payOrder()">결제 완료</button>
+                </div>
+            </div>
+
+            <button id="summary-button" class="summary-toggle-button" onclick="toggleSummaryPanel()">총 수입 및 판매 현황 보기</button>
+
+            <div id="summary-panel" class="summary-panel" style="display: none;">
+                <div class="total-revenue">
+                    <h3>총 수입: <span id="total-revenue">0</span>원</h3>
+                </div>
+                <div class="sales-status">
+                    <h3>판매 메뉴 현황</h3>
+                    <ul id="sales-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
