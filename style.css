@@ -382,3 +382,106 @@ body {
     justify-content: space-between;
 }
 
+
+/* --- 반응형 디자인 코드 --- */
+
+/* 아이패드(768px ~ 1024px) */
+@media (max-width: 1024px) {
+    .tables-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+}
+
+/* 아이폰(767px 이하) */
+@media (max-width: 767px) {
+    body {
+        height: auto;
+    }
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .left-panel, .right-panel {
+        flex: 1;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .left-panel {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tables-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .table-button {
+        height: 100px;
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .table-number {
+        top: 6px;
+        left: 6px;
+        font-size: 0.8em;
+    }
+
+    .table-order-summary {
+        font-size: 0.7em;
+        max-height: 50px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .order-list-container {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    .order-column {
+        height: 150px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .order-button, .pay-button {
+        width: 100%;
+        font-size: 1em;
+    }
+    
+    .home-button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .summary-toggle-button {
+        margin-bottom: 0;
+        font-size: 1em;
+    }
+    
+    #total-revenue {
+        font-size: 2em;
+    }
+    
+    .total-revenue h3 {
+        font-size: 1.1em;
+    }
+    
+    .no-table-selected {
+        font-size: 1em;
+    }
+}
