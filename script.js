@@ -1,3 +1,7 @@
+// ==========================
+// 🎉 축제 주점 포스기 스크립트
+// ==========================
+
 const menuItems = [
     { id: 1, name: "제육볶음", price: 12900 },
     { id: 2, name: "닭발", price: 14900 },
@@ -34,6 +38,7 @@ const currentTableTotalEl = document.getElementById('current-table-total');
 const totalRevenueEl = document.getElementById('total-revenue');
 const salesListEl = document.getElementById('sales-list');
 
+// 초기화
 function init() {
     createTableButtons();
     createMenuButtons();
@@ -48,6 +53,7 @@ function initSalesStatus() {
     updateSalesStatusPanel();
 }
 
+// 테이블 버튼 생성
 function createTableButtons() {
     for (let i = 1; i <= tablesCount; i++) {
         const button = document.createElement('button');
@@ -65,6 +71,7 @@ function createTableButtons() {
     }
 }
 
+// 메뉴 버튼 생성
 function createMenuButtons() {
     menuItems.forEach(item => {
         const button = document.createElement('button');
@@ -214,24 +221,19 @@ function payOrder() {
     updateTableStatus(currentTable, 'paid');
     totalRevenueEl.textContent = totalRevenue.toLocaleString();
     
-    // 결제 완료 후 해당 테이블의 주문 내역을 모두 초기화합니다.
+    // 결제 완료 후 테이블 초기화
     tables[currentTable].currentOrders = [];
     tables[currentTable].placedOrders = [];
     tables[currentTable].total = 0;
     
-    // 테이블 버튼의 주문 내역도 삭제되도록 updateTableSummary를 호출합니다.
     updateTableSummary(currentTable);
-    
     goHome();
 }
 
 function updateTableStatus(tableNumber, status) {
     const tableButton = document.querySelector(`.table-button[data-table-number='${tableNumber}']`);
+    if (!tableButton) return;
     
-    if (tableButton.classList.contains('active')) {
-        return;
-    }
-
     tableButton.classList.remove('occupied', 'paid');
     
     if (status === 'occupied') {
@@ -288,7 +290,7 @@ function toggleSummaryPanel() {
     }
 }
 
-// 터치 확대/축소(pinch) 및 더블 탭 확대 방지
+// 모바일 확대 방지
 document.addEventListener('touchstart', function(event) {
     if (event.touches.length > 1) {
         event.preventDefault();
@@ -310,4 +312,5 @@ document.addEventListener('touchend', function(event) {
     lastTouchEnd = now;
 }, false);
 
+// 초기 실행
 init();
