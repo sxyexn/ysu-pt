@@ -4,7 +4,7 @@ const menuItems = [
     { id: 3, name: "포카칩피자", price: 5000 },
     { id: 4, name: "포카칩", price: 5000 },
     { id: 5, name: "주먹밥", price: 3500 },
-    { id: 5, name: "자릿세", price: 5000 }
+    { id: 6, name: "자릿세", price: 5000 }
 ];
 
 const tablesCount = 20;
