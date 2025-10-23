@@ -241,7 +241,6 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    height: 500px;
 }
 .order-column h3 {
     margin: 0 0 10px 0;
