@@ -11,6 +11,7 @@ const menuItems = [
     { id: 6, name: "자릿세", price: 5000 }
 ];
 
+
 const tablesCount = 20;
 let currentTable = null;
 let totalRevenue = 0;
