@@ -6,7 +6,7 @@ const menuItems = [
     { id: 1, name: "제육볶음", price: 12900 },
     { id: 2, name: "닭발", price: 14900 },
     { id: 3, name: "포카칩피자", price: 5000 },
-    { id: 4, name: "포카칩", price: 5000 },
+    { id: 4, name: "콘치즈", price: 5000 },
     { id: 5, name: "주먹밥", price: 3500 },
     { id: 6, name: "자릿세", price: 5000 }
 ];
